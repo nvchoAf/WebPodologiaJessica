@@ -1,0 +1,597 @@
+
+/* ========================================
+   PODOLOGÍA CLÍNICA JESSICA
+   Diseño responsive - Mobile First
+======================================== */
+
+/* COLORES */
+
+:root {
+  --burdeo: #7E1837;
+  --burdeo-oscuro: #65132C;
+  --rosa: #BF4169;
+  --rosa-pastel: #F2B5C8;
+  --rosa-claro: #F8E6EB;
+  --rosa-borde: #EED4DD;
+  --fondo: #FFF9FA;
+  --blanco: #FFFFFF;
+  --texto: #693143;
+  --texto-suave: #987282;
+}
+
+/* ESTILOS GENERALES */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--texto);
+  background:
+    radial-gradient(
+      ellipse at top left,
+      #FBE4EB 0%,
+      transparent 42%
+    ),
+    var(--fondo);
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.pagina {
+  width: min(100% - 32px, 900px);
+  margin: 0 auto;
+  padding: 35px 0;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 150px;
+  margin: 0 auto 22px;
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.etiqueta {
+  margin: 0 0 12px;
+  color: var(--rosa);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+}
+
+h1, h2, p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 15px;
+  color: var(--burdeo);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 7vw, 62px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+h1 span {
+  display: block;
+  font-weight: 600;
+}
+
+.descripcion {
+  max-width: 360px;
+  margin: 0 auto;
+  color: var(--texto-suave);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* DECORACIÓN */
+
+.separador {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 180px;
+  margin: 24px auto 0;
+  color: var(--rosa);
+  font-size: 24px;
+}
+
+.separador::before,
+.separador::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rosa-pastel);
+}
+
+/* TARJETA DE DATOS BANCARIOS */
+
+.tarjeta {
+  padding: 24px 18px;
+  border: 1px solid var(--rosa-borde);
+  border-radius: 22px;
+  background: var(--blanco);
+  box-shadow: 0 12px 40px rgba(103, 32, 57, 0.06);
+}
+
+.tarjeta-encabezado {
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.tarjeta-encabezado h2 {
+  margin-bottom: 5px;
+  color: var(--burdeo);
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.tarjeta-encabezado p {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 12px;
+}
+
+/* LISTA DE DATOS */
+
+.lista-datos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.dato {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #F5E7EC;
+  border-radius: 14px;
+  background: #FFFBFC;
+}
+
+.dato-informacion {
+  flex: 1;
+  min-width: 0;
+}
+
+.dato-etiqueta {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--texto-suave);
+  font-size: 11px;
+}
+
+.dato-valor {
+  display: block;
+  color: var(--burdeo);
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* BOTONES */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--rosa);
+  outline-offset: 3px;
+}
+
+.boton-copiar {
+  flex-shrink: 0;
+  min-width: 75px;
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid var(--rosa-borde);
+  border-radius: 10px;
+  background: var(--rosa-claro);
+  color: var(--burdeo);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.boton-copiar:hover {
+  background: #F1CEDA;
+}
+
+/* BOTÓN PRINCIPAL */
+
+.acciones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.boton-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 54px;
+  padding: 15px;
+  border: none;
+  border-radius: 13px;
+  background: var(--burdeo);
+  color: var(--blanco);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.boton-principal:hover {
+  background: var(--burdeo-oscuro);
+}
+
+.icono-copiar {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.ayuda {
+  margin: 12px 0 0;
+  color: var(--texto-suave);
+  font-size: 11px;
+  text-align: center;
+}
+
+/* PIE DE PÁGINA */
+
+.pie {
+  padding: 35px 12px 15px;
+  text-align: center;
+}
+
+.adorno {
+  margin-bottom: 15px;
+  color: var(--rosa);
+  font-size: 17px;
+}
+
+.pie h2 {
+  margin-bottom: 8px;
+  color: var(--burdeo);
+  font-family: Georgia, serif;
+  font-size: clamp(22px, 4vw, 31px);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.pie p {
+  margin-bottom: 5px;
+  color: var(--texto-suave);
+  font-size: 12px;
+}
+
+.corazon {
+  color: var(--rosa);
+  font-size: 25px;
+}
+
+/* NOTIFICACIÓN AL COPIAR */
+
+.notificacion {
+  position: fixed;
+  z-index: 10;
+  bottom: 24px;
+  left: 50%;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  padding: 13px 19px;
+  border-radius: 40px;
+  background: var(--burdeo);
+  color: var(--blanco);
+  font-size: 13px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(101, 19, 44, 0.18);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 16px);
+  transition: 0.25s ease;
+}
+
+.notificacion.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+/* TABLETS Y COMPUTADORES */
+
+@media (min-width: 700px) {
+
+  .pagina {
+    padding-top: 65px;
+  }
+
+  .logo {
+    width: 175px;
+  }
+
+  .encabezado {
+    margin-bottom: 40px;
+  }
+
+  .tarjeta {
+    padding: 36px;
+  }
+
+  .lista-datos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .dato {
+    min-height: 85px;
+  }
+
+  .boton-principal {
+    max-width: 380px;
+  }
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 360px) {
+
+  .pagina {
+    width: calc(100% - 22px);
+  }
+
+  .tarjeta {
+    padding: 20px 12px;
+  }
+
+  .dato {
+    padding: 11px 9px;
+  }
+
+  .dato-valor {
+    font-size: 12px;
+  }
+
+  .boton-copiar {
+    min-width: 67px;
+    padding: 8px;
+    font-size: 11px;
+  }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
+
+/* ==========================================
+   OPTIMIZACIÓN MOBILE FIRST
+   Encabezado compacto y acceso rápido
+========================================== */
+
+/* CONTENEDOR GENERAL */
+
+.pagina {
+  padding-top: 18px;
+  padding-bottom: 20px;
+}
+
+/* ENCABEZADO COMPACTO */
+
+.encabezado {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 90px;
+  margin-bottom: 12px;
+}
+
+.etiqueta {
+  margin-bottom: 6px;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin-bottom: 9px;
+  font-size: clamp(29px, 6vw, 43px);
+  line-height: 1.05;
+}
+
+.descripcion {
+  max-width: 320px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* TARJETA BANCARIA */
+
+.tarjeta {
+  padding: 18px 14px;
+}
+
+.tarjeta-encabezado {
+  margin-bottom: 14px;
+}
+
+.tarjeta-encabezado h2 {
+  margin-bottom: 4px;
+  font-size: 21px;
+}
+
+.tarjeta-encabezado p {
+  font-size: 11px;
+}
+
+/* BOTÓN PRINCIPAL ARRIBA */
+
+.acciones {
+  margin-top: 0;
+  margin-bottom: 17px;
+}
+
+.boton-principal {
+  min-height: 46px;
+  padding: 12px;
+  font-size: 13px;
+}
+
+.icono-copiar {
+  font-size: 18px;
+}
+
+/* DATOS MÁS COMPACTOS */
+
+.lista-datos {
+  gap: 8px;
+}
+
+.dato {
+  padding: 9px 12px;
+  border-radius: 11px;
+}
+
+.dato-etiqueta {
+  margin-bottom: 3px;
+  font-size: 10px;
+}
+
+.dato-valor {
+  font-size: 13px;
+}
+
+.boton-copiar {
+  min-height: 36px;
+  padding: 7px 10px;
+  font-size: 11px;
+}
+
+/* PIE DE PÁGINA */
+
+.pie {
+  padding-top: 22px;
+}
+
+/* PANTALLAS GRANDES */
+
+@media (min-width: 700px) {
+  .pagina {
+    padding-top: 35px;
+  }
+
+  .logo {
+    width: 125px;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  .encabezado {
+    margin-bottom: 28px;
+  }
+
+  .tarjeta {
+    padding: 30px;
+  }
+
+  .acciones {
+    margin-bottom: 22px;
+  }
+}
+
+/* TÍTULO ESTILO EDITORIAL ELEGANTE */
+
+.titulo-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 12px;
+  color: var(--burdeo);
+  text-align: center;
+  font-weight: normal;
+}
+
+.titulo-manuscrito {
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-size: clamp(38px, 10vw, 62px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.titulo-elegante {
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-size: clamp(22px, 6.3vw, 43px);
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+}
+
+/* PANTALLAS GRANDES */
+
+@media (min-width: 700px) {
+  .titulo-manuscrito {
+    font-size: 64px;
+  }
+
+  .titulo-elegante {
+    font-size: 43px;
+    letter-spacing: 0;
+  }
+}
+
+
+/* FACILITAR LA SELECCIÓN MANUAL */
+
+.dato-valor {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* EVITAR RESALTADOS MOLESTOS EN MÓVIL */
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}

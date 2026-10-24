@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;1,6..96,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#FFF9FA">
+
+  <meta
+    name="description"
+    content="Datos bancarios de Podología Clínica Jessica para realizar transferencias de forma rápida y sencilla."
+  >
+  <title>Datos de Transferencia | Podología Jessica</title>
+</head>
+
+<body>
+
+  <main class="pagina">
+
+    <header class="encabezado">
+
+      <div class="logo">
+        <img
+          src="assets/logo.png"
+          alt="Logotipo de Podología Jessica"
+        >
+      </div>
+
+      <div class="encabezado-contenido">
+
+        <h1 class="titulo-principal">
+        <span class="titulo-manuscrito">Datos de</span>
+        <span class="titulo-elegante">TRANSFERENCIA</span>
+        </h1>
+
+
+        <p class="descripcion">
+          Copia los datos y realiza tu transferencia.
+        </p>
+
+      </div>
+
+   
+
+    </header>
+
+
+    
+<section class="tarjeta" aria-labelledby="titulo-datos">
+
+  <div class="tarjeta-encabezado">
+    <h2 id="titulo-datos">Datos bancarios</h2>
+  </div>
+
+  <!-- ACCIÓN PRINCIPAL -->
+
+  <div class="acciones">
+    <button
+      class="boton-principal"
+      id="copiar-todos"
+      type="button"
+    >
+      <span class="icono-copiar" aria-hidden="true">▢</span>
+      Copiar todos los datos
+    </button>
+  </div>
+
+  <!-- DATOS BANCARIOS INDIVIDUALES -->
+
+  <div
+    class="lista-datos"
+    id="lista-datos"
+  ></div>
+
+</section>
+
+
+
+    <!-- ========================== -->
+    <!-- PIE DE PÁGINA              -->
+    <!-- ========================== -->
+
+    <footer class="pie">
+
+      <div class="agradecimiento">
+
+        <h2>¡Gracias por tu confianza!</h2>
+
+        <p>Tu bienestar es nuestra prioridad.</p>
+
+      </div>
+
+      <span class="corazon" aria-hidden="true">♡</span>
+
+    </footer>
+
+  </main>
+
+
+  <!-- NOTIFICACIONES -->
+
+  <div
+    class="notificacion"
+    id="notificacion"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+</body>
+</html>
+  <script src="script.js" defer></script>
