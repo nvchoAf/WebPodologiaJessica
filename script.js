@@ -98,26 +98,27 @@ datosBancarios.forEach((dato) => {
 
 /* COPIAR TODOS LOS DATOS */
 
+
+/* COPIAR TODOS LOS DATOS */
+
 botonTodos.addEventListener("click", async () => {
 
-  
-const textoCompleto = datosBancarios
-  .map((dato) => dato.valor)
-  .join("\n");
-
+  // Copiar solamente los valores, sin etiquetas
+  const textoCompleto = datosBancarios
+    .map(dato => dato.valor.trim())
+    .join("\n");
 
   try {
     await copiarTexto(textoCompleto);
 
-    botonTodos.innerHTML = "✓ ¡Datos copiados!";
+    botonTodos.textContent = "✓ ¡Datos copiados!";
 
     mostrarNotificacion(
       "¡Todos los datos fueron copiados!"
     );
 
     setTimeout(() => {
-      botonTodos.innerHTML =
-        '<span class="icono-copiar" aria-hidden="true">▢</span> Copiar todos los datos';
+      botonTodos.textContent = "Copiar todos los datos";
     }, 2500);
 
   } catch (error) {
