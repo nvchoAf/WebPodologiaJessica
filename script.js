@@ -100,9 +100,11 @@ datosBancarios.forEach((dato) => {
 
 botonTodos.addEventListener("click", async () => {
 
-  const textoCompleto = datosBancarios
-    .map((dato) => `${dato.etiqueta}: ${dato.valor}`)
-    .join("\n");
+  
+const textoCompleto = datosBancarios
+  .map((dato) => dato.valor)
+  .join("\n");
+
 
   try {
     await copiarTexto(textoCompleto);
